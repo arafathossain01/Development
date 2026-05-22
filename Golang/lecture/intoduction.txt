@@ -1,0 +1,11 @@
+1. What is GO?
+=> Golang is a programming language that is developed by Google in 2009. It's a modern language designed for building fast and scalable software. it's a compiled language (like C /C++)
+
+2. What is Go used  for?
+=> Go is mainly used for system-level and backend developmend.
+    1. Web secver and APIs
+    2. Claud based application
+    3. Networking tools
+    4. Microservices
+    5. DevOps tools
+    6. Command-line (CLI) apps
