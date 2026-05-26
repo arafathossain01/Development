@@ -10,7 +10,7 @@ function print() {
 
 ### function expression or named function expression
 
-যখন কোন variable এর ভিতরে function রাখা হয় তখন তাকে function expression বলে।
+যখন কোন variable এর ভিতরে function রাখা হয় তখন তাকে function expression বলে। function expresion creation phase এ memory component এ undefined বসবে এবং execition phase এ পুড়া function টা বসে যাবে code component এ।
 
 ```js
 var log = function print() {
