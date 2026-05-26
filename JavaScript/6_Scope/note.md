@@ -103,7 +103,14 @@ outer();
 
 <img src="./laxicalEnv.png">
 
-Global Lexical Environment-এর আউটার রেফারেন্স (Reference to the outer environment) সবসময় null থাকে।" কারণ গ্লোবালের বাইরে আর কোনো প্যারেন্ট স্কোপ বা আউটার এনভায়রনমেন্ট থাকে না। এখানে inner function এর laxical environment হচ্ছে তার নিজের memory component + outer function এর reference , এভাবে নিচের গুলা ও কাজ করতেছে। 
+Global Lexical Environment-এর আউটার রেফারেন্স (Reference to the outer environment) সবসময় null থাকে।" কারণ গ্লোবালের বাইরে আর কোনো প্যারেন্ট স্কোপ বা আউটার এনভায়রনমেন্ট থাকে না। এখানে inner function এর laxical environment হচ্ছে তার নিজের memory component + outer function এর reference , এভাবে নিচের গুলা ও কাজ করতেছে।
+
+### Laxical Scope
+
+আমরা ফাংশনের ভিতরে আমাদের প্রয়োজন অনুযায়ী একাধিক ফাংশন তৈরি করতে পারি এবং চাইল্ড ফাংশনগুলো তার প্যারেন্ট ফাংশনের সব ভেরিয়েবলস এবং আর্গুমেন্টসের এক্সেস পায়। কিন্তু প্যারেন্ট ফাংশনগুলো তার চাইল্ড ফাংশনের ভেরিয়েবলস এবং আর্গুমেন্টসের কোন এক্সেস পায় না। এই যে চাইল্ড ফাংশনগুলো তার প্যারেন্ট ফাংশনের ভেরিয়েবলস এবং আর্গুমেন্টসের এক্সেস পাচ্ছে
+এটাকেই বলা হয় Lexical Scoping।
+
+---
 
 ### Scope Chain
 
@@ -111,5 +118,27 @@ Global Lexical Environment-এর আউটার রেফারেন্স (R
 
 <img src="./laxicalEnv.png">
 
-এখানে laxical environment ধরে ধরে  inner function variable a কে খুজতেছে। inner function যেহেতু outer function এর reference ধরে রেখেছে সে প্রথমে outer function কে বলবে তোমার কাছে কি a নামের variable আছে কি নাহ, যখন বলবে নাই তখন সে outer function এর কাছে global lexical enviorenment এর reference থাকে ওই refernece ধরে global এর কাছ থেকে সে a variable কে access করতে পারে। এই যে একটা scope থেকে অন্য scope এ খুঁজে খুঁজে variable এর scope খুঁজাটাই scope chain. 
+এখানে laxical environment ধরে ধরে inner function variable a কে খুজতেছে। inner function যেহেতু outer function এর reference ধরে রেখেছে সে প্রথমে outer function কে বলবে তোমার কাছে কি a নামের variable আছে কি নাহ, যখন বলবে নাই তখন সে outer function এর কাছে global lexical enviorenment এর reference থাকে ওই refernece ধরে global এর কাছ থেকে সে a variable কে access করতে পারে। এই যে একটা scope থেকে অন্য scope এ খুঁজে খুঁজে variable এর scope খুঁজাটাই scope chain.
 
+---
+
+### Closure
+
+Closure হচ্ছে ফাংশনের এমন একটা বৈশিষ্ট্য
+যে বৈশিষ্ট্যের কারণে ফাংশন এক্সিকিউশন শেষ হয়ে যাবার পরেও তার lexical envirenment এ অবস্থিত সকল variable
+কে মনে রাখতে পারে।
+
+```js
+function outer() {
+  var a = 10;
+  function inner() {
+    console.log(a);
+  }
+  return inner;
+}
+
+var log = outer();
+log();
+```
+
+উপরের code এ global execution context এর memory component এ log এর value undefined হবে creation phase এ, এবং log() function পুরোটা বসে যাবে। execution phase এ log এর value undefined থেকে outer() function হয়ে call হবে এবং নতুন local execution context এ outer() function এর ভিতর থাকা a এর মান undefined থাকবে এবং execution phase এ inner কে return করে দেওয়া হবে। এখানে inner function এর সাথে outer function এর `a` variable bind হয়ে return করবে। এবার log এর ভিতর inner function বসে যাবে এবং log() call হবে। যেহেতু inner function এর ভিতর outer function এর variable `a` use করা হচ্ছে তাই এই a থাকবে closure এর ভিতর, closure এই a কে মনে রাখবে কারণ outer function call stack থেকে pop  হয়ে যাওয়ার পর inner এর ভিতর `a` variable কে খুঁজে পাওয়া যাবে নাহ, কিন্তু inner function কে `a` use করতে হবে। তাই যখন use করবে তখন এই `a` এর মান আসবে closure থেকে। এভাবেই closure কাজ করে। 
