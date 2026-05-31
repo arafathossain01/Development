@@ -17,7 +17,7 @@
 
 **_মেমোরি কম্পোনেন্ট মূলত একটিই (Key-Value Pair স্টোরেজ), কিন্তু জাভাস্ক্রিপ্ট ইঞ্জিন ভ্যারিয়েবলের ধরন (var নাকি let/const) এবং তারা কোথায় অবস্থিত তার ওপর ভিত্তি করে মেমোরিকে Global, Script, Local, এবং Block নামক ভিন্ন ভিন্ন স্কোপে বা জোনে ভাগ করে ম্যানেজ করে। যখন কোনো ফাংশন এক্সিকিউট হয়, তখন গ্লোবাল এক্সিকিউশন কন্টেক্সটের ওপর (Call Stack-এ) একটি সম্পূর্ণ নতুন Local Execution Context এসে বসে। এই নতুন লোকাল কন্টেক্সটের নিজস্ব একটা মেমোরি কম্পোনেন্ট থাকে, যার নাম Local Scope।_** <br><br>
 <img src="./memoryComponent.png"> <br><br>
-**ii. Code Component (thread of execut)**
+**ii. Code Component (thread of execution)**
 
 এই অংশে JavaScript Engine line by line code execute করে।
 
