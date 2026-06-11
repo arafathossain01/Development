@@ -1,13 +1,13 @@
 /**
  * JavaScript has 2 types of DataTypes:
- * 1. Primitive             2. Object
- * 1.1 Boolean                  2.1 object
- * 1.2 null                         2.2 array
- * 1.3 undefined             2.3 function
- * 1.4 Number                    2.4 date
- * 1.5 BigInt                    2.5 regexp
- * 1.6 String                    2.6 set
- * 1.7 Symbol                    2.7 map
+ * 1. Primitive [immutable]             2. Non-primitive / reference [mutable]
+ * 1.1 Boolean                                          2.1 object
+ * 1.2 null                                                 2.2 array
+ * 1.3 undefined                                     2.3 function
+ * 1.4 Number                                            2.4 date
+ * 1.5 BigInt                                            2.5 regexp
+ * 1.6 String                                            2.6 set
+ * 1.7 Symbol                                            2.7 map
  */
 
 const number = 29;
