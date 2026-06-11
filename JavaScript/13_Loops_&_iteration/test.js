@@ -24,3 +24,21 @@ do {
   console.log(j);
   j++;
 } while (j <= 2);
+
+// for....in loop | Object এর key (index/property name) iterate করার জন্য use হয়
+const obj = {
+  fName: "Arafat",
+  lName: "Hossain",
+  age: 23,
+};
+
+for (let key in obj) {
+  console.log(key); // fName lName age
+  console.log(obj[key]); // Arafat Hossain 23
+}
+
+// for.....of loop | Iterable (array, string, map, set) এর value পাওয়ার জন্য
+const arr = [1, 2, 3, 4, 5, 6, 7];
+for (let n of arr) {
+  console.log(n);
+}
