@@ -10,16 +10,23 @@
  * 1.7 Symbol                                            2.7 map
  */
 
+//[-(2^53-1)<number<(2^53-1)] intigers limit
 const number = 29;
 const boolean = true;
 const string = `Hello SWE`;
 const bigint = 9007199254740992n;
 
 // Data type conversion
-const num = 20; // number
+let num = 20; // number
 console.log(num.toString()); // number to string
 const number1 = 12345678;
 console.log(number1.toLocaleString("de-DE")); // using for currency formatting
+num = String(num); // convert to string
+console.log(num);
+
+let x = "20";
+x = Number(x);
+console.log(x); // convert to number
 
 const str = `my age is ` + 20; // string
 const str2 = 30 + ` is a number.`; //string

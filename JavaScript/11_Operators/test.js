@@ -61,3 +61,8 @@ Comparison Operators
 7. >=         greater than or equal to
 8. <=         less than or equal to
 */
+
+/**
+ * An operator is unary if it has a single operand. let x = 1 ; x = -x;
+ * An operator is binary if it has two operands. let x = 1, y = 2; let z = x - y;
+ */

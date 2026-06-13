@@ -59,3 +59,8 @@ switch (true) {
 
 // break statement লুপ বা switch-এর ভিতর থেকে একদম বের করে দেয়।
 // continue statement লুপের current iteration skip করে, এবং পরবর্তী iteration চালু করে।
+
+
+// 
+let age = 20;
+let result = (age < 18) ? console.log("You are not a voter") : console.log("You are a voter");
