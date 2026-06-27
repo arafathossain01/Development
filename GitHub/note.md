@@ -16,8 +16,8 @@
 
 ### Command line and their work
 
-- git config --list --show-origin [show settings list and their path]
-- git config --global user.name "Name" [set user name at git]
-- git config --global user.email email@example.com [set email address at git]
-- git help config [show the official document of git config]
-- git add -h [show the help manual of git add]
+- `git config --list --show-origin` [show settings list and their path]
+- `git config --global user.name "Name"` [set user name at git]
+- `git config --global user.email email@example.com` [set email address at git]
+- `git help config` [show the official document of git config]
+- `git add -h` [show the help manual of git add]
