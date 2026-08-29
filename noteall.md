@@ -1,0 +1,1 @@
+<a href="https://docs.google.com/document/d/1wk4e1EBXISDY7-J0fOjzglYCkWqxbVBRXt88tfEmo_k/edit?tab=t.4xclskmuwuyu">Note</a>

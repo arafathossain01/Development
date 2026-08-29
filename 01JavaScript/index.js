@@ -1,0 +1,3 @@
+alert("Safwan")
+
+console.log();
