@@ -8,16 +8,16 @@ var log = function print() {
   console.log("This is function expression");
 };
 
-// anonymous function inside IIFE (Immediately Invoked Function Expression)
-(function () {
-  console.log("I am anonymous function inside an IIFE");
-})();
-
 // arrow function
 
 var print = () => {
   console.log("I am arrow function");
 };
+
+// anonymous function inside IIFE (Immediately Invoked Function Expression)
+(function () {
+  console.log("I am anonymous function inside an IIFE");
+})();
 
 // parameters vs arguments
 
