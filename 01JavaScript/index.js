@@ -1,3 +1,0 @@
-alert("Safwan")
-
-console.log();
